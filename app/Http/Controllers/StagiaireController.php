@@ -64,8 +64,16 @@ class StagiaireController extends Controller
 
     public function destroy(Stagiaire $stagiaire)
     {
-        $stagiaire->delete();
+        // Vérifier si l'utilisateur existe
+        if ($stagiaire) {
+            // Supprimer l'utilisateur
+            $stagiaire->delete();
 
-        return redirect()->route('admin.pages.stagiaires.index')->with('success', 'Stagiaire supprimé avec succès.');
+            // Rediriger vers une autre page ou retourner une réponse JSON
+            return redirect()->route('stagiaires.index')->with('success', 'Le(a) stagiaire a été supprimé avec succès.');
+        } else {
+            // L'utilisateur n'existe pas, retourner une réponse d'erreur
+            return redirect()->route('stagiaires.index')->with('error', 'Le(a) stagiaire n\'existe pas.');
+        }
     }
 }

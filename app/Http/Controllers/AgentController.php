@@ -79,5 +79,16 @@ class AgentController extends Controller
      */
     public function destroy(User $agent)
     {
+        // Vérifier si l'utilisateur existe
+        if ($agent) {
+            // Supprimer l'utilisateur
+            $agent->delete();
+
+            // Rediriger vers une autre page ou retourner une réponse JSON
+            return redirect()->route('agents.index')->with('success', 'L\'agent a été supprimé avec succès.');
+        } else {
+            // L'utilisateur n'existe pas, retourner une réponse d'erreur
+            return redirect()->route('agents.index')->with('error', 'L\'agent n\'existe pas.');
+        }
     }
 }
