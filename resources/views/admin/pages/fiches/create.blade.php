@@ -85,7 +85,7 @@
                                 <legend>A. Du point de vue du savoir</legend>
                                 <div class="row mt-2">
                                     <div class="col-9">
-                                        <label for="cons_str_acc" class="form-label">Consolidation et structuration de l'acquis</label>
+                                        <label for="cons_str_acc" class="form-label">Connaissance et structure d'accueil</label>
                                     </div>
                                     <div class="col-3">
                                         <input type="number" class="form-control errorInput stepOne" id="cons_str_acc" name="cons_str_acc" step="0.01" max="1" required>    

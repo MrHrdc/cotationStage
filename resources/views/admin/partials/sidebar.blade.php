@@ -73,7 +73,7 @@
             </a>
           </li>
           <li>
-            <a href="icons-remix.html">
+            <a href="{{ route('fiches.index') }}">
               <i class="bi bi-circle"></i><span>Liste</span>
             </a>
           </li>

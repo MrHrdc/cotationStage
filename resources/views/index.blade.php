@@ -1,20 +1,19 @@
 @extends('admin.layouts.app')
 @section('content')
-<div class="pagetitle"> <h1>Dashboard</h1> <nav> <ol class="breadcrumb"> <li class="breadcrumb-item"><a href="{{route('index')}}">Accueil</a></li> <li class="breadcrumb-item">Pages</li> <li class="breadcrumb-item active">Vierge</li> </ol> </nav> </div><!-- Fin du titre de la page -->
+<div class="pagetitle"> <h1>Tableau de Bord</h1> <nav> <ol class="breadcrumb"> <li class="breadcrumb-item"><a href="{{route('index')}}">Accueil</a></li> <li class="breadcrumb-item">Pages</li> <li class="breadcrumb-item active">Vierge</li> </ol> </nav> </div><!-- Fin du titre de la page -->
   <section class="section dashboard">
     <div class="row">
             <!-- Left side columns -->
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <div class="row">
-                <img height="345px" src="https://www.mediacongo.net/cache/office_des_routes_20_000_jpg_640_350_1.jpeg" alt="">
               </div>
             </div><!-- End Left side columns -->
       <!-- Left side columns -->
-      <div class="col-lg-6">
+      <div class="col-lg-12">
         <div class="row">
 
           <!-- agents Card -->
-          <div class="col-xxl-4 col-md-6">
+          <div class="col-xxl-3 col-md-6">
             <div class="card info-card sales-card">
 
               <div class="filter">
@@ -48,7 +47,7 @@
           </div><!-- End Sales Card -->
 
           <!-- Revenue Card -->
-          <div class="col-xxl-4 col-md-6">
+          <div class="col-xxl-3 col-md-6">
             <div class="card info-card revenue-card">
 
               <div class="filter">
@@ -72,7 +71,7 @@
                     <i class="bi bi-files"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>300</h6>
+                    <h6>Filder</h6>
 
                   </div>
                 </div>
@@ -82,7 +81,7 @@
           </div><!-- End Revenue Card -->
 
           <!-- stagiaires Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <div class="col-xxl-3 col-xl-6">
 
             <div class="card info-card customers-card">
 
