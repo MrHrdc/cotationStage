@@ -347,7 +347,7 @@
             input.addEventListener('input', function() {
                 var value = parseFloat(input.value);
                 if (value > max) {
-                    errorMessage.textContent = 'La valeur saisie doit être inférieure à ' + max + '.';
+                    errorMessage.textContent = 'La valeur saisie doit être inférieure ou egal ' + max + '.';
                     errorMessage.style.display = 'block';
                 } else {
                     errorMessage.style.display = 'none';

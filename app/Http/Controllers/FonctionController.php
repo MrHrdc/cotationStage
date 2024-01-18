@@ -37,7 +37,7 @@ class FonctionController extends Controller
 
     public function show(Fonction $fonction)
     {
-        return view('fonctions.show', compact('fonction'));
+        return view('admin.pages.fonctions.show', compact('fonction'));
     }
 
     public function edit(Fonction $fonction)

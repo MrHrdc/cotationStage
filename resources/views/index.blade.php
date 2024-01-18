@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('content')
-<div class="pagetitle"> <h1>Tableau de Bord</h1> <nav> <ol class="breadcrumb"> <li class="breadcrumb-item"><a href="{{route('index')}}">Accueil</a></li> <li class="breadcrumb-item">Pages</li> <li class="breadcrumb-item active">Vierge</li> </ol> </nav> </div><!-- Fin du titre de la page -->
+<div class="pagetitle"> <h1>Tableau de Bord</h1> <nav> <ol class="breadcrumb"> <li class="breadcrumb-item"><a href="{{route('index')}}">Accueil</a></li> <li class="breadcrumb-item">fiche</li> <li class="breadcrumb-item active">Vierge</li> </ol> </nav> </div><!-- Fin du titre de la page -->
   <section class="section dashboard">
     <div class="row">
             <!-- Left side columns -->
@@ -64,7 +64,7 @@
               </div>
 
               <div class="card-body">
-                <h5 class="card-title">Fiche <span>| OR</span></h5>
+                <h5 class="card-title">fiche<span>| OR</span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">

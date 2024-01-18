@@ -17,7 +17,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Liste des fiche</h5>
+          <h5 class="card-title">Liste des Fiches</h5>
 
           @if(session('success'))
           <div class="alert alert-success">
@@ -30,12 +30,11 @@
               
             <tr>
                 <ul>
-                    A. Du point de vue du savoir
                 </ul>
-                <th>Connaissance et structure d'Accueil</th>
-                <th>integration au poste de travail</th>
-                <th>aptitude et technique dans son travail</th>
-                <th>curiosite personnelle</th>
+                <th>Nom</th>
+                <th>Post-nom</th>
+                <th>Date limite</th>
+                <th>Cote</th>
                 <th class="text-right col-lg-2">
                   Actions
               </th>
@@ -44,9 +43,7 @@
             <tbody>
 
               <tr>
-                <ul> 
-                  B. Du point de vu saoir formulaire
-</ul>
+    
                 <td></td>
                 <td></td>
                 <td></td>
