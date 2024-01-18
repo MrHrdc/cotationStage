@@ -58,6 +58,7 @@ class AgentController extends Controller
      */
     public function show(User $agent)
     {
+        return view('admin.pages.agents.show', compact('agent'));
     }
 
     /**
@@ -65,13 +66,38 @@ class AgentController extends Controller
      */
     public function edit(User $agent)
     {
+        $fonctions = Fonction::all();
+        return view('admin.pages.agents.edit', compact(['agent','fonctions']));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $agent)
+    public function update(Request $request, $id)
     {
+        // Récupérer l'utilisateur à mettre à jour
+        $agent = User::findOrFail($id);
+    
+        // Mettre à jour les champs de l'utilisateur
+        $agent->nom = $request->input('nom');
+        $agent->email = $request->input('email');
+        $agent->postnom = $request->input('postnom');
+        $agent->prenom = $request->input('prenom');
+    
+        // Vérifier si un nouveau mot de passe est fourni
+        if ($request->filled('password')) {
+            $agent->password = bcrypt($request->input('password'));
+        }
+    
+        // Associer la fonction à l'utilisateur
+        $fonction = Fonction::find($request->input('fonction_id'));
+        $agent->fonction()->associate($fonction);
+    
+        // Enregistrer les modifications de l'utilisateur
+        $agent->save();
+    
+        // Rediriger ou afficher un message de succès
+        return redirect()->route('agents.index')->with('success', 'Utilisateur mis à jour avec succès.');
     }
 
     /**

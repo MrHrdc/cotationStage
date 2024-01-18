@@ -111,6 +111,7 @@
       let titleDelete = document.getElementById('titleDelete');
       titleDelete.innerHTML = "Suppression";
 
+
   }
 </script>
 @endsection
