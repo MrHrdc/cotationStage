@@ -71,7 +71,7 @@
                     <i class="bi bi-files"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>Filder</h6>
+                    <h6> {{$nombreFiches}} </h6>
 
                   </div>
                 </div>

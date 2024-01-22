@@ -18,19 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('stagiaires', StagiaireController::class);
+    Route::resource('fonctions', FonctionController::class);
+    Route::resource('agents', AgentController::class);
+    Route::resource('fiches', FicheController::class);
 
-Route::resource('stagiaires', StagiaireController::class);
-Route::resource('fonctions', FonctionController::class);
-Route::resource('agents', AgentController::class);
-Route::resource('fiches', FicheController::class);
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/fiches/{fiche}/print', [FicheController::class, 'print'])->name('fiches.print');
 });

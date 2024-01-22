@@ -36,11 +36,11 @@
                                         <label for="stagiaire_id" class="form-label">Rechercher un Stagiaire</label>
                                     </div>
                                     <div class="col-7">
-                                        <select class="form-control select2" id="stagiaire_id" required data-live-search="true">
+                                        <select class="form-control select2" id="stagiaire_id" name="stagiaire_id" required data-live-search="true">
                                             <option value="">Rechercher un stagiaire</option>
                                             @foreach ($stagiaires as $stagiaire)
-                                            <option value="{{ $stagiaire->id }}" data-nom="{{ $stagiaire->nom }}"  data-postnom="{{ $stagiaire->postnom }}" data-prenom="{{ $stagiaire->prenom }}" data-institution="{{ $stagiaire->institution_provenance }}" data-lieuAffectation="{{$stagiaire->lieuAffectation}}">{{ $stagiaire->nom }} {{ $stagiaire->postnom }} {{ $stagiaire->prenom }} {{ $stagiaire->institution_provenance }}</option>
-                                        @endforeach
+                                                <option value="{{ $stagiaire->id }}" data-nom="{{ $stagiaire->nom }}" data-postnom="{{ $stagiaire->postnom }}" data-prenom="{{ $stagiaire->prenom }}" data-institution="{{ $stagiaire->institution_provenance }}" data-lieuAffectation="{{$stagiaire->lieuAffectation}}">{{ $stagiaire->nom }} {{ $stagiaire->postnom }} {{ $stagiaire->prenom }} {{ $stagiaire->institution_provenance }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -212,10 +212,10 @@
                         </div>
                         <div class="col-6">
                             <fieldset>
-                                <legend>A. Du point de vue du savoir - être</legend>
+                                <legend>C. Du point de vue du savoir - être</legend>
                                 <div class="row mt-2">
                                     <div class="col-9">
-                                        <label for="respet_loi_etabliss" class="form-label">Respect de la loi établie</label>
+                                        <label for="respet_loi_etabliss" class="form-label">Respect de la loi établissement</label>
                                     </div>
                                     <div class="col-3">
                                         <input type="number" class="form-control errorInput stepThree" id="respet_loi_etabliss" name="respet_loi_etabliss" step="0.01" max="1.6" required>                     
@@ -239,7 +239,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-9">
-                                        <label for="honnet_resp_publ" class="form-label">Honnêteté et responsabilité publique</label>
+                                        <label for="honnet_resp_publ" class="form-label">Honnêteté et responsabilité public</label>
                                     </div>
                                     <div class="col-3">
                                         <input type="number" class="form-control stepThree" id="honnet_resp_publ" name="honnet_resp_publ" step="0.01" max="1.6" required>                    

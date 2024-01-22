@@ -22,6 +22,6 @@ class Stagiaire extends Model
 
     public function fiche()
     {
-        return $this->belongsTo(Fiche::class);
+        return $this->hasOne(Fiche::class, 'stagiaire_id');
     }
 }

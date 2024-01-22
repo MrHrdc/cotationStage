@@ -25,7 +25,7 @@ class CreateFichesTable extends Migration
             $table->double('honnet_resp_publ')->default(0);
             $table->double('initia_perso')->default(0);
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('stagiaire_id')->constrained('stagiaires');
+            $table->unsignedBigInteger('stagiaire_id')->unique();
             $table->timestamps();
         });
     }
