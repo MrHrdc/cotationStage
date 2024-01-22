@@ -38,8 +38,6 @@ class StagiaireController extends Controller
 
     public function show(Stagiaire $stagiaire)
     {
-        dd($stagiaire->id);
-
         return view('admin.pages.stagiaires.show', compact('stagiaire'));
     }
 
