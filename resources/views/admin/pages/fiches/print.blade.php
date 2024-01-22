@@ -257,6 +257,10 @@
                     <td class="col-1">1.6</td>
                 </tr>
                 <tr>
+
+                    <td class="col-9" colspan="2">Total C</td>
+                    <td class="col-1"></td>
+
                     <td class="col-9 text-left" colspan="2">Total C</td>
                     <td class="col-1">
                       <?php
@@ -271,6 +275,7 @@
                       $total_C = $respet_loi_etabliss + $ponct_tenue_vestim + $regul_langa + $honnet_resp_publ + $initia_perso;
                       ?>
                       <?php echo $total_A; ?></td>
+
                     <td class="col-1">8</td>
                 </tr>
               </tbody>
