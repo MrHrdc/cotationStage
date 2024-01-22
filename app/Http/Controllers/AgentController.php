@@ -36,6 +36,9 @@ class AgentController extends Controller
         // Créer un nouvel utilisateur
         $agent = new User();
         $agent->nom = $request->input('nom');
+        $agent->matricule= $request->input('matricule');
+        $agent->grade = $request->input('grade');
+        $agent->service= $request->input('service');
         $agent->email = $request->input('email');
         $agent->postnom = $request->input('postnom');
         $agent->prenom = $request->input('prenom');
@@ -81,6 +84,10 @@ class AgentController extends Controller
 
         // Mettre à jour les champs de l'utilisateur
         $agent->nom = $request->input('nom');
+        $agent->matricule= $request->input('matricule');
+        $agent->grade = $request->input('grade');
+        $agent->service = $request->input('service');
+        $agent->prenom = $request->input('prenom');
         $agent->email = $request->input('email');
         $agent->postnom = $request->input('postnom');
         $agent->prenom = $request->input('prenom');

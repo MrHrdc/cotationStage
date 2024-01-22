@@ -226,7 +226,7 @@
                 </tr>
                 <tr>
                     <td class="col-9" colspan="2">Total C</td>
-                    <td class="col-1">0</td>
+                    <td class="col-1"></td>
                     <td class="col-1">8</td>
                 </tr>
               </tbody>
