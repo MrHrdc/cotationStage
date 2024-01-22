@@ -8,7 +8,16 @@
         border: 1px solid black;
         /* background-color: red; */
         width: 695px;
-        height: 1242px;
+        height: 1442px;
+    }
+    tr .encadreurTD {
+      /* background-color: red; */
+      height: 100px;
+      text-align: top;
+    }
+    .text-left{
+      text-align: left;
+      font-weight: bold;
     }
     .large_cellule {
         width: 10px;
@@ -123,8 +132,19 @@
                 <td class="col-1">1</td>
               </tr>
               <tr>
-                <td class="col-9" colspan="2">Total A</td>
-                <td class="col-1">0</td>
+                <td class="col-9 text-left" colspan="2">Total A</td>
+                <td class="col-1">
+                  <?php
+                    // Obtenir les valeurs des champs de la catégorie A
+                    $cons_str_acc = $fiche->cons_str_acc;
+                    $int_post_trav = $fiche->int_post_trav;
+                    $apt_tech_trav = $fiche->apt_tech_trav;
+                    $curio_prof = $fiche->curio_prof;
+
+                    // Calculer le total de la catégorie A
+                    $total_A = $cons_str_acc + $int_post_trav + $apt_tech_trav + $curio_prof;
+                    ?>
+                <?php echo $total_A; ?></td>
                 <td class="col-1">4</td>
             </tr>
             </tbody>
@@ -174,8 +194,20 @@
                     <td class="col-1">1.6</td>
                 </tr>
                 <tr>
-                    <td class="col-9" colspan="2">Total B</td>
-                    <td class="col-1"></td>
+                    <td class="col-9 text-left" colspan="2">Total B</td>
+                    <td class="col-1">
+                      <?php
+                        // Obtenir les valeurs des champs de la catégorie B
+                        $adress_presi = $fiche->adress_presi;
+                        $compr_eff_trav = $fiche->compr_eff_trav;
+                        $cap_resou_probl = $fiche->cap_resou_probl;
+                        $lang_termi = $fiche->lang_termi;
+                        $demon_cohe_cons = $fiche->demon_cohe_cons;
+
+                        // Calculer le total de la catégorie B
+                        $total_B = $adress_presi + $compr_eff_trav + $cap_resou_probl + $lang_termi + $demon_cohe_cons;
+                      ?>
+                    <?php echo $total_B; ?></td>
                     <td class="col-1">8</td>
                 </tr>
               </tbody>
@@ -225,11 +257,58 @@
                     <td class="col-1">1.6</td>
                 </tr>
                 <tr>
+
                     <td class="col-9" colspan="2">Total C</td>
                     <td class="col-1"></td>
+
+                    <td class="col-9 text-left" colspan="2">Total C</td>
+                    <td class="col-1">
+                      <?php
+                      // Obtenir les valeurs des champs
+                      $respet_loi_etabliss = $fiche->respet_loi_etabliss;
+                      $ponct_tenue_vestim = $fiche->ponct_tenue_vestim;
+                      $regul_langa = $fiche->regul_langa;
+                      $honnet_resp_publ = $fiche->honnet_resp_publ;
+                      $initia_perso = $fiche->initia_perso;
+                      
+                      // Calculer le total de la catégorie A
+                      $total_C = $respet_loi_etabliss + $ponct_tenue_vestim + $regul_langa + $honnet_resp_publ + $initia_perso;
+                      ?>
+                      <?php echo $total_A; ?></td>
+
                     <td class="col-1">8</td>
                 </tr>
               </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th class="col-4 encadreurTD">Nom et Post-nom de l'encadreur  <br>
+                    {{$fiche->user->nom}} {{$fiche->user->postnom}} {{$fiche->user->prenom}}
+                  </th>
+                  <th class="col-3 encadreurTD" >Fonction <br>
+                    {{$fiche->user->fonction->name}}
+                  </th>
+                  <th class="col-3 encadreurTD">Date <br>
+                    {{$fiche->user->created_at}}
+                  </th>
+                  <th class="col-2 encadreurTD">Signature <br> 
+
+                  </th>
+                  <th class="col-2 encadreurTD">Total Général <br>
+                    @php
+                        $totalGeneral = $total_A + $total_B + $total_C;
+                        echo $totalGeneral;
+                    @endphp
+                  </th>
+                </tr>
+              </thead>
             </table>
           </div>
         </div>
