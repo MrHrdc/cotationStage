@@ -5,13 +5,50 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <style>
     .container {
+      font-family: sans-serif;
         border: 1px solid black;
         /* background-color: red; */
-        width: 695px;
-        height: 1442px;
+        width: 895px;
+        height: 1842px;
+    }
+    .elite {
+    font-weight: bold;
+    border-bottom: 1px solid;
+  }
+  .tres-bon, .bon, .assez-bon, .mauvais, .tres-mauvais, .mediocre {
+    border-bottom: 1px solid;
+  }
+    .zonevisa {
+      width: 685px;
+      height: 100px;
+      border-top: 1px solid black;
+      /* background-color: red; */
+    }
+
+    .zoneAprreciation {
+      width: 685px;
+      height: 300px;
+      border-top : 1px solid black;
+      /* background-color: aqua; */
+    }
+    .zoneAppreciationFlex {
+      width: 100%;
+      height: 200px;
+      /* background-color: red !important; */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .zoneAppreciationFlex ul {
+      list-style: none;
+    }
+    h6 {
+      text-align: center;
     }
     tr .encadreurTD {
       /* background-color: red; */
+      border: 1px solid black;
+      border-collapse: collapse;
       height: 100px;
       text-align: top;
     }
@@ -55,6 +92,14 @@
       .print-button {
         display: none;
       }
+      
+    tr .encadreurTD {
+      /* background-color: red; */
+      border: 1px solid black;
+      border-collapse: collapse;
+      height: 100px;
+      text-align: top;
+    }
   
       /* Ajoutez ici les styles de table que vous souhaitez conserver lors de l'impression */
       table {
@@ -214,8 +259,8 @@
             </table>
           </div>
         </div>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
         <div class="col-12">
           <div class="table-responsive">
             <table class="table table-bordered">
@@ -259,9 +304,6 @@
                 <tr>
 
                     <td class="col-9" colspan="2">Total C</td>
-                    <td class="col-1"></td>
-
-                    <td class="col-9 text-left" colspan="2">Total C</td>
                     <td class="col-1">
                       <?php
                       // Obtenir les valeurs des champs
@@ -282,8 +324,8 @@
             </table>
           </div>
         </div>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
         <div class="col-12">
           <div class="table-responsive">
             <table class="table table-bordered">
@@ -312,12 +354,68 @@
             </table>
           </div>
         </div>
+    </div>
+    <div class="row">
+        <div class=" col-12 zonevisa">
+          <h6>VISA DU DIRECTEUR CONCERNE</h6>
+        </div>
+    </div>
+    <div class="row">
+      <div class=" col-12 zonevisa">
+        <h6>VISA DU DIRECTEUR DE LA FORMATION</h6>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-12 zoneAppreciation">
+        <h6>ÉCHELLE D'ÉVALUATION</h6>
+        <div class="zoneAppreciationFlex">
+          <ul>
+            <li id="elite">ELITE : 18 à 20</li>
+            <li id="tres-bon">TRÈS BON : 15 à 17</li>
+            <li id="bon">BON : 12 à 14</li>
+            <li id="assez-bon">ASSEZ BON : 9 à 11</li>
+          </ul> 
+          <ul>
+            <li id="mauvais">MAUVAIS : 6 à 8</li>
+            <li id="tres-mauvais">TRÈS MAUVAIS : 3 à 5</li>
+            <li id="mediocre">MÉDIOCRE : 0 à 2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
       <div class="row align-center">
         <button class="print-button" onclick="window.print()">Imprimer</button>
       </div>
   </div>
 
 </body>
+<script>
+  var totalGeneral = <?php echo $totalGeneral; ?>;
+  var categories = ['elite', 'tres-bon', 'bon', 'assez-bon', 'mauvais', 'tres-mauvais', 'mediocre'];
 
+  for (var i = 0; i < categories.length; i++) {
+    var category = categories[i];
+    var liElement = document.getElementById(category);
+
+    if (category === 'elite' && totalGeneral >= 18 && totalGeneral <= 20) {
+      liElement.style.fontWeight = 'bold';
+      liElement.style.borderBottom = '1px solid';
+    } else if (category === 'tres-bon' && totalGeneral >= 15 && totalGeneral <= 17) {
+      liElement.style.borderBottom = '1px solid';
+    } else if (category === 'bon' && totalGeneral >= 12 && totalGeneral <= 14) {
+      liElement.style.border = '1px solid';
+    } else if (category === 'assez-bon' && totalGeneral >= 9 && totalGeneral <= 11) {
+      liElement.style.borderBottom = '1px solid';
+    } else if (category === 'mauvais' && totalGeneral >= 6 && totalGeneral <= 8) {
+      liElement.style.border = '1px solid';
+    } else if (category === 'tres-mauvais' && totalGeneral >= 3 && totalGeneral <= 5) {
+      liElement.style.borderBottom = '1px solid';
+    } else if (category === 'mediocre' && totalGeneral >= 0 && totalGeneral <= 2) {
+      liElement.style.borderBottom = '1px solid';
+    } else {
+      liElement.style.borderBottom = 'none';
+    }
+  }
+</script>
 </html>
