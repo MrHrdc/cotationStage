@@ -55,6 +55,11 @@
           </div>
 
           <div class="form-group">
+            <label for="inputInstitutionProvenance">Institution de provenance</label>
+            <input type="text" class="form-control" id="inputInstitutionProvenance" value="{{ $stagiaire->institution_provenance }}" readonly>
+          </div>
+          
+          <div class="form-group">
             <label for="inputDateDebut">Date de début</label>
             <input type="text" class="form-control" id="inputDateDebut" value="{{ $stagiaire->date_debut }}" readonly>
           </div>

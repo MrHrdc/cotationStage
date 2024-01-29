@@ -31,6 +31,9 @@ class StagiaireController extends Controller
         $stagiaire->institution_provenance = $request->input('institution_provenance');
         $stagiaire->date_debut = $request->input('date_debut');
         $stagiaire->date_fin = $request->input('date_fin');
+        $stagiaire->date_fin = $request->input('adresse_domicile');
+        $stagiaire->date_fin = $request->input('categorie');
+        $stagiaire->date_fin = $request->input('numero_division');
         $stagiaire->save();
 
         return redirect()->route('stagiaires.index')->with('success', 'Stagiaire créé avec succès.');

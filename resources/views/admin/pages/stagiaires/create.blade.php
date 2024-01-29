@@ -4,7 +4,7 @@
   <h1>Stagiaires</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{route('index')}}">Accueil</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('index') }}">Accueil</a></li>
       <li class="breadcrumb-item">Stagiaires</li>
       <li class="breadcrumb-item active">Création</li>
     </ol>
@@ -25,7 +25,7 @@
               <label for="inputNom" class="form-label">Nom</label>
               <input type="text" name="nom" class="form-control" id="inputNom">
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
               <label for="inputSexe" class="form-label">Sexe</label>
               <select class="form-control" name="sexe" id="inputSexe">
                 <option value="null">Selectionnez votre Sexe</option>
@@ -60,7 +60,7 @@
             <div class="col-md-6">
               <label for="inputNumerodivision" class="form-label">Numero division</label>
               <input type="text" class="form-control" name="domaine_stage" id="inputNumerodivision">
-            </div>
+</div>
             <div class="col-md-6">
               <label for="inputInstitutionProvenance" class="form-label">Institution de provenance</label>
               <input type="text" class="form-control" name="institution_provenance" id="inputInstitutionProvenance">
@@ -77,9 +77,9 @@
               <label for="inputDateFin" class="form-label">Date de fin</label>
               <input type="date" class="form-control" name="date_fin" id="inputDateFin">
             </div>
-            <div class="text-right mt-2">
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="reset" class="btn btn-secondary">Reset</button>
+            <div class="col-6">
+              <button type="submit" class="btn btn-primary">Créer</button>
+              <button type="reset" class="btn btn-secondary">Réinitialiser</button>
             </div>
           </form><!-- Vertical Form -->
 
