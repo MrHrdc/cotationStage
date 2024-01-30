@@ -268,10 +268,10 @@
                 <option value="service">service Quado</option>
                 <option value="service">service Labo Diesel</option>
                 <option value="service">service Electricite</option>
-                <option value="service">service service Chauffeurs VL</option>
-                <option value="service">service surveillance</option>
-                <option value="service">service Huissier</option>
-                <option value="service">service Atelier Techniques</option>
+                <option value="service">service Chauffeurs VL</option>
+                <option value="service">surveillance</option>
+                <option value="service">Huissier</option>
+                <option value="service">Atelier Techniques</option>
               </select>
 </div>
               <div class="col-md-6">
