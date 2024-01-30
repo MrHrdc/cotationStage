@@ -14,11 +14,14 @@ return new class() extends Migration {
             $table->id();
             $table->string('nom');
             $table->string('sexe');
-            $table->string('postnom');
+            $table->string('categorie');
+            $table->string('postnom')->nullable();
             $table->string('prenom');
             $table->string('lieu_affection');
             $table->string('domaine_stage');
+            $table->string('numerodivision');
             $table->string('institution_provenance');
+            $table->string('adresse_domicile');
             $table->date('date_debut');
             $table->date('date_fin');
             $table->timestamps();

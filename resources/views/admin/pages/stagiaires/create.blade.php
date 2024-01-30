@@ -28,19 +28,19 @@
             <div class="col-md-6">
               <label for="inputSexe" class="form-label">Sexe</label>
               <select class="form-control" name="sexe" id="inputSexe">
-                <option value="null">Selectionnez votre Sexe</option>
+                <option value="">Selectionnez votre Sexe</option>
                 <option value="homme">Homme</option>
                 <option value="femme">Femme</option>
               </select>
             </div>
             <div class="col-md-6">
-              <label for="inputSexe" class="form-label">categorie</label>
-              <select class="form-control" name="sexe" id="inputSexe">
-                <option value="null">Selectionnez votre categorie</option>
-                <option value="homme">Academique</option>
-                <option value="femme">Professionnelle</option>
+              <label for="inputCategorie" class="form-label">Categorie</label>
+              <select class="form-control" name="categorie" id="inputCategorie">
+                <option value="">Selectionnez votre categorie</option>
+                <option value="academique">Academique</option>
+                <option value="professionnelle">Professionnelle</option>
               </select>
-</div>
+            </div>
             <div class="col-md-6">
               <label for="inputPostnom" class="form-label">Postnom</label>
               <input type="text" class="form-control" name="postnom" id="inputPostnom">
@@ -59,15 +59,15 @@
             </div>
             <div class="col-md-6">
               <label for="inputNumerodivision" class="form-label">Numero division</label>
-              <input type="text" class="form-control" name="domaine_stage" id="inputNumerodivision">
-</div>
+              <input type="text" class="form-control" name="numerodivision" id="inputNumerodivision">
+            </div>
             <div class="col-md-6">
               <label for="inputInstitutionProvenance" class="form-label">Institution de provenance</label>
               <input type="text" class="form-control" name="institution_provenance" id="inputInstitutionProvenance">
             </div>
             <div class="col-md-6">
-              <label for="inputAdressedomicilee" class="form-label">adresse Domicile</label>
-              <input type="text" class="form-control" name="domaine_stage" id="inputAdressedomicile">
+              <label for="inputAdresseDomicile" class="form-label">Adresse Domicile</label>
+              <input type="text" class="form-control" name="adresse_domicile" id="inputAdresseDomicile">
             </div>
             <div class="col-md-6">
               <label for="inputDateDebut" class="form-label">Date de début</label>
@@ -78,15 +78,14 @@
               <input type="date" class="form-control" name="date_fin" id="inputDateFin">
             </div>
             <div class="col-6">
-              <button type="submit" class="btn btn-primary">Créer</button>
-              <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+              <button type="submit" class="btn btn-primary">Enregistrer</button>
             </div>
-          </form><!-- Vertical Form -->
-
+          </form>
+          <!-- End Vertical Form -->
+          
         </div>
       </div>
     </div>
   </div>
 </section>
-
 @endsection
