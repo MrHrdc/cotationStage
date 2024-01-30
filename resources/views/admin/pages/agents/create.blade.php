@@ -267,7 +267,7 @@
                 <option value="service">service Chef de section Machine Outil</option>
                 <option value="service">service Quado</option>
                 <option value="service">service Labo Diesel</option>
-                <option value="service">service Electricite</option>
+                <option value="service">Electricite</option>
                 <option value="service">service Chauffeurs VL</option>
                 <option value="service">surveillance</option>
                 <option value="service">Huissier</option>
