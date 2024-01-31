@@ -11,6 +11,10 @@
         width: 895px;
         height: 1842px;
     }
+    * {
+    margin: 0%;
+    padding: 0%;
+  }
     .elite {
     font-weight: bold;
     border-bottom: 1px solid;

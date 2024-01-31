@@ -29,11 +29,11 @@ class StagiaireController extends Controller
         $stagiaire->lieu_affection = $request->input('lieu_affection');
         $stagiaire->domaine_stage = $request->input('domaine_stage');
         $stagiaire->institution_provenance = $request->input('institution_provenance');
+        $stagiaire->adresse_domicile = $request->input('adresse_domicile');
         $stagiaire->date_debut = $request->input('date_debut');
         $stagiaire->date_fin = $request->input('date_fin');
-        $stagiaire->date_fin = $request->input('adresse_domicile');
-        $stagiaire->date_fin = $request->input('categorie');
-        $stagiaire->date_fin = $request->input('numero_division');
+        $stagiaire->categorie = $request->input('categorie');
+        $stagiaire->numerodivision = $request->input('numerodivision');
         $stagiaire->save();
 
         return redirect()->route('stagiaires.index')->with('success', 'Stagiaire créé avec succès.');
@@ -49,20 +49,28 @@ class StagiaireController extends Controller
         return view('admin.pages.stagiaires.edit', compact('stagiaire'));
     }
 
-    public function update(Request $request, Stagiaire $stagiaire)
+    public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'nom' => 'required',
-            'email' => 'required|email|unique:stagiaires,email,'.$stagiaire->id,
-            'postnom' => 'required',
-            'prenom' => 'required',
-            'date_debut' => 'required|date',
-            'date_fin' => 'required|date|after:date_debut',
-        ]);
+        $stagiaire = Stagiaire::find($id);
+        if (!$stagiaire) {
+            return redirect()->route('stagiaires.index')->with('error', 'Stagiaire non trouvé.');
+        }
 
-        $stagiaire->update($validatedData);
+        $stagiaire->nom = $request->input('nom');
+        $stagiaire->sexe = $request->input('sexe');
+        $stagiaire->postnom = $request->input('postnom');
+        $stagiaire->prenom = $request->input('prenom');
+        $stagiaire->lieu_affection = $request->input('lieu_affection');
+        $stagiaire->domaine_stage = $request->input('domaine_stage');
+        $stagiaire->institution_provenance = $request->input('institution_provenance');
+        $stagiaire->adresse_domicile = $request->input('adresse_domicile');
+        $stagiaire->date_debut = $request->input('date_debut');
+        $stagiaire->date_fin = $request->input('date_fin');
+        $stagiaire->categorie = $request->input('categorie');
+        $stagiaire->numerodivision = $request->input('numerodivision');
+        $stagiaire->save();
 
-        return redirect()->route('admin.pages.stagiaires.index')->with('success', 'Stagiaire mis à jour avec succès.');
+        return redirect()->route('stagiaires.index')->with('success', 'Stagiaire mis à jour avec succès.');
     }
 
     public function destroy(Stagiaire $stagiaire)

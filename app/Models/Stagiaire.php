@@ -11,11 +11,14 @@ class Stagiaire extends Model
     protected $fillable = [
         'nom',
         'sexe',
+        'categorie',
         'postnom',
         'prenom',
         'lieu_affection',
         'domaine_stage',
+        'numerodivision',
         'institution_provenance',
+        'adresse_domicile',
         'date_debut',
         'date_fin',
     ];
