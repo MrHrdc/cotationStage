@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class() extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,16 +13,10 @@ return new class extends Migration
         Schema::create('directions', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->timestamps();
-        });
-
-        Schema::create('divisions', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
-            $table->unsignedBigInteger('direction_id')->nullable();
+            $table->unsignedBigInteger('division_id');
             $table->timestamps();
 
-            $table->foreign('direction_id')->references('id')->on('directions');
+            $table->foreign('division_id')->references('id')->on('divisions');
         });
     }
 
