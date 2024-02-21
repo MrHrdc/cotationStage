@@ -13,8 +13,10 @@ return new class() extends Migration {
         Schema::create('divisions', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->unsignedBigInteger('direction_id')->nullable();
+            $table->unsignedBigInteger('direction_id');
             $table->timestamps();
+
+            $table->foreign('direction_id')->references('id')->on('directions');
         });
     }
 

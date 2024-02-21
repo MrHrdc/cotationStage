@@ -8,12 +8,16 @@
       font-family: sans-serif;
         border: 1px solid black;
         /* background-color: red; */
-        width: 895px;
-        height: 1842px;
+        width: 100%;
+        height: 100%;
     }
     * {
     margin: 0%;
     padding: 0%;
+  }
+  .image {
+    widows: 100px;
+    height: 100px;
   }
     .elite {
     font-weight: bold;
@@ -24,23 +28,25 @@
   }
     .zonevisa {
       width: 685px;
-      height: 100px;
+      height: 80px;
       border-top: 1px solid black;
       /* background-color: red; */
     }
 
     .zoneAprreciation {
-      width: 685px;
-      height: 300px;
+      margin-bottom: 0%;
       border-top : 1px solid black;
       /* background-color: aqua; */
     }
     .zoneAppreciationFlex {
-      width: 100%;
-      height: 200px;
       /* background-color: red !important; */
       display: flex;
       justify-content: space-around;
+      align-items: flex-start;
+    }
+    .fexImageAndTitle {
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
     }
     .zoneAppreciationFlex ul {
@@ -93,28 +99,53 @@
     }
 
     @media print {
-      .print-button {
-        display: none;
-      }
-      
-    tr .encadreurTD {
-      /* background-color: red; */
-      border: 1px solid black;
-      border-collapse: collapse;
-      height: 100px;
-      text-align: top;
+
+    * {
+      margin: 0%;
+      padding: 0%;
     }
-  
-      /* Ajoutez ici les styles de table que vous souhaitez conserver lors de l'impression */
-      table {
-        /* Vos styles de table ici */
-      }
+  .print-button {
+    display: none;
+  }
+  .image {
+    widows: 100px;
+    height: 100px;
+  }
+
+  /* Styles spécifiques aux cellules de la table */
+  table {
+    /* Vos styles de table ici */
+    width: 100%; /* Assurez-vous que la table s'adapte à la largeur de la page */
+  }
+
+  tr .encadreurTD {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 100px;
+    text-align: top;
+    /* Autres styles spécifiques aux cellules de la table */
+  }
+  tr {
+    line-height: 1; /* Ajustez cette valeur pour réduire l'espace entre les lignes */
+    padding: 0%;
+    margin: 0%;
+    background-color: red !important;
+  }
+  .zoneAprreciation {
+      padding: 0%;
+      margin: 0%;
+      /* background-color: aqua; */
     }
+
+}
   </style>
 </head>
 <body>
   <div class="container">
-  <h8 class="text-center">OFFICE DES ROUTES</br> DEPARTEMENT D'ADMINISTRATION GENERALE </br> DIRECTION DE FORMATION</h8>
+    <div class="fexImageAndTitle">
+      <img src="https://th.bing.com/th/id/OIP.1DlYQhFFyRVyfjD5EMxX3wHaHa?rs=1&pid=ImgDetMain" class="image" alt="Office des Routes images online">
+      <h6 class="text-center">OFFICE DES ROUTES</br> DEPARTEMENT D'ADMINISTRATION GENERALE </br> DIRECTION DE FORMATION</h8>
+    </div>
     <h3 class="text-center">FICHE DE NOTATION POUR ETUDIANTS</h3>
     <div class="row">
       <div class="col-12">
@@ -157,7 +188,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="test">
                 <td class="col-1">1</td>
                 <td class="col-9">Connaissance de la structure d'accueil</td>
                 <td class="col-1">{{ $fiche->cons_str_acc }}</td>

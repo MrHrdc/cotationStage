@@ -13,10 +13,12 @@ return new class() extends Migration {
         Schema::create('directions', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->unsignedBigInteger('division_id');
+            $table->unsignedBigInteger('departement_id');
+            $table->foreign('departement_id')
+            ->references('id')
+            ->on('departements')
+            ->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('division_id')->references('id')->on('divisions');
         });
     }
 
@@ -25,7 +27,6 @@ return new class() extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('divisions');
         Schema::dropIfExists('directions');
     }
 };

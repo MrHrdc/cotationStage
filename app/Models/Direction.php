@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Direction extends Model
 {
     use HasFactory;
-    protected $fillable = ['nom', ];
+    protected $fillable = ['nom'];
 
-    
-        public function departement()
-        {
-            return $this->belongsTo(Departement::class);
-        }
+    public function departement()
+    {
+        return $this->belongsTo(Departement::class);
     }
+}
